@@ -9,7 +9,7 @@ module ActsAsParanoid
 
     module ClassMethods
       def belongs_to_with_deleted(target, scope = nil, options = {})
-        with_deleted = options.delete(:with_deleted)
+        with_deleted = scope.delete(:with_deleted)
         result = belongs_to_without_deleted(target, scope, options)
 
         if with_deleted
